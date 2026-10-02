@@ -44,6 +44,11 @@ class SyncError(Exception):
     """Raised for recoverable sync errors."""
 
 
+def log_info(message: str) -> None:
+    timestamp = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    print(f"[{timestamp}] {message}", flush=True)
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Sync CMS Hospitals datasets")
     parser.add_argument(
@@ -259,12 +264,18 @@ def migrate_legacy_output_filenames(state: dict[str, Any], output_dir: Path) -> 
 
 
 def download_and_normalize_csv(task: DistributionTask, output_dir: Path) -> dict[str, Any]:
+    log_info(f"START  dataset={task.dataset_id} file={task.distribution_name}")
+
     try:
         response = requests.get(task.download_url, headers={"User-Agent": USER_AGENT}, timeout=120)
         response.raise_for_status()
         payload = response.content
     except requests.RequestException as exc:
         raise SyncError(f"Download failed for {task.dataset_id} ({task.download_url}): {exc}") from exc
+
+    log_info(
+        f"DOWNLOADED  dataset={task.dataset_id} file={task.distribution_name} bytes={len(payload)}"
+    )
 
     output_path = output_file_path(output_dir, task)
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -292,6 +303,10 @@ def download_and_normalize_csv(task: DistributionTask, output_dir: Path) -> dict
             rows_written += 1
 
     temp_path.replace(output_path)
+
+    log_info(
+        f"DONE  dataset={task.dataset_id} file={task.distribution_name} rows={rows_written} output={output_path.name}"
+    )
 
     return {
         "dataset_id": task.dataset_id,
@@ -336,33 +351,75 @@ def run_sync_once(args: argparse.Namespace) -> int:
     output_dir = Path(args.output_dir)
     state_file = Path(args.state_file)
 
+    log_info("Loading prior sync state")
+
     state = load_state(state_file)
+    log_info(f"State file: {state_file.resolve()}")
+
     if migrate_legacy_output_filenames(state, output_dir):
+        log_info("Migrated legacy output filename references in state")
         save_state(state_file, state)
 
     run_start = dt.datetime.now(dt.timezone.utc).isoformat()
     state["last_run_started_utc"] = run_start
+    log_info(f"Run started (UTC): {run_start}")
+
+    log_info(f"Fetching CMS metastore items from {args.metastore_url}")
 
     items = load_metastore_items(args.metastore_url)
+    log_info(f"Fetched metastore items: {len(items)}")
 
     previous_datasets_state = state.get("datasets", {})
     tasks, hospitals_count = build_distribution_tasks(items, previous_datasets_state)
+    log_info(f"Hospitals datasets discovered: {hospitals_count}")
+    log_info(f"CSV files needing refresh: {len(tasks)}")
 
     results: list[dict[str, Any]] = []
     failures: list[str] = []
 
     if tasks and not args.dry_run:
+        worker_count = max(1, args.workers)
+        log_info(f"Starting parallel download/normalize with workers={worker_count}")
+
         with concurrent.futures.ThreadPoolExecutor(max_workers=max(1, args.workers)) as executor:
             future_map = {
                 executor.submit(download_and_normalize_csv, task, output_dir): task
                 for task in tasks
             }
+
+            completed = 0
+            total = len(tasks)
             for future in concurrent.futures.as_completed(future_map):
                 task = future_map[future]
                 try:
-                    results.append(future.result())
+                    result = future.result()
+                    results.append(result)
+                    completed += 1
+                    log_info(
+                        "PROGRESS "
+                        f"{completed}/{total} completed "
+                        f"dataset={task.dataset_id} rows={result['rows_written']}"
+                    )
                 except Exception as exc:  # noqa: BLE001 - keep sync robust
                     failures.append(f"{task.dataset_id}: {exc}")
+                    completed += 1
+                    log_info(
+                        "PROGRESS "
+                        f"{completed}/{total} completed with error "
+                        f"dataset={task.dataset_id} error={exc}"
+                    )
+    elif args.dry_run:
+        log_info("Dry-run enabled: no files will be downloaded or written")
+        preview_count = min(10, len(tasks))
+        for idx, task in enumerate(tasks[:preview_count], start=1):
+            log_info(
+                f"DRY-RUN target {idx}/{len(tasks)} dataset={task.dataset_id} file={task.distribution_name}"
+            )
+        if len(tasks) > preview_count:
+            remaining = len(tasks) - preview_count
+            log_info(f"DRY-RUN ... plus {remaining} additional file(s)")
+    else:
+        log_info("No updated CSV files detected; nothing to process")
 
     run_end = dt.datetime.now(dt.timezone.utc).isoformat()
     state["last_run_completed_utc"] = run_end
@@ -383,6 +440,7 @@ def run_sync_once(args: argparse.Namespace) -> int:
     state["history"] = state["history"][-50:]
 
     save_state(state_file, state)
+    log_info("State file updated")
 
     print("=" * 80)
     print("CMS Hospitals sync complete")
