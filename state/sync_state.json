@@ -1,6 +1,6 @@
 {
-  "last_run_started_utc": "2026-10-02T10:35:00.625574+00:00",
-  "last_run_completed_utc": "2026-10-02T10:35:11.507775+00:00",
+  "last_run_started_utc": "2026-10-02T10:47:41.743327+00:00",
+  "last_run_completed_utc": "2026-10-02T10:47:42.141455+00:00",
   "datasets": {
     "x663-bwbj": {
       "modified": "2026-07-22",
@@ -8,7 +8,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/f086b4b7fc9d628f08e70ade47dff3c5_1785189946/ASCQR_OAS_CAHPS_STATE.csv",
-          "output_file": "output/ASCQR_OAS_CAHPS_STATE__20260722.csv",
+          "output_file": "output/ASCQR_OAS_CAHPS_STATE_20260722.csv",
           "rows_written": 56
         }
       ]
@@ -19,7 +19,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/65a38069cc48376e9f519a3609424537_1785189945/ASCQR_OAS_CAHPS_NATIONAL.csv",
-          "output_file": "output/ASCQR_OAS_CAHPS_NATIONAL__20260722.csv",
+          "output_file": "output/ASCQR_OAS_CAHPS_NATIONAL_20260722.csv",
           "rows_written": 1
         }
       ]
@@ -30,7 +30,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/c1017e56164f4774560619c9020116fa_1770163562/CJR_Quality_Reporting_January_2026_Production_File.csv",
-          "output_file": "output/CJR_Quality_Reporting_January_2026_Production_File__20260126.csv",
+          "output_file": "output/CJR_Quality_Reporting_January_2026_Production_File_20260126.csv",
           "rows_written": 320
         }
       ]
@@ -41,7 +41,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/d3aea2dfaeae85c44017441b184aeb6d_1770163558/ASC_State.csv",
-          "output_file": "output/ASC_State__20251216.csv",
+          "output_file": "output/ASC_State_20251216.csv",
           "rows_written": 54
         }
       ]
@@ -52,7 +52,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/43dcc3212bfab34ac186ac2e19196b09_1770163554/ASC_National.csv",
-          "output_file": "output/ASC_National__20251216.csv",
+          "output_file": "output/ASC_National_20251216.csv",
           "rows_written": 1
         }
       ]
@@ -63,7 +63,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/aba37eca11edcd4272afff9e6dc78bda_1790013957/Complications_and_Deaths-National.csv",
-          "output_file": "output/Complications_and_Deaths-National__20260910.csv",
+          "output_file": "output/Complications_and_Deaths-National_20260910.csv",
           "rows_written": 20
         }
       ]
@@ -74,7 +74,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/c9c4b48e76ed7ca1e965bd39959d497b_1770163573/FY2024_Distribution_of_Net_Change_in_Base_Op_DRG_Payment_Amt.csv",
-          "output_file": "output/FY2024_Distribution_of_Net_Change_in_Base_Op_DRG_Payment_Amt__20251209.csv",
+          "output_file": "output/FY2024_Distribution_of_Net_Change_in_Base_Op_DRG_Payment_Amt_20251209.csv",
           "rows_written": 13
         }
       ]
@@ -85,7 +85,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/f29bb7c812e242f6edfef0a4b7d0eaca_1760630713/Footnote_Crosswalk.csv",
-          "output_file": "output/Footnote_Crosswalk__20250918.csv",
+          "output_file": "output/Footnote_Crosswalk_20250918.csv",
           "rows_written": 32
         }
       ]
@@ -96,7 +96,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/dd03994fc93e296bb0297f1cd43cc987_1770163552/ASC_Facility.csv",
-          "output_file": "output/ASC_Facility__20251216.csv",
+          "output_file": "output/ASC_Facility_20251216.csv",
           "rows_written": 5711
         }
       ]
@@ -107,7 +107,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/247bb4364e310313773d74ccb0fb3231_1790013957/Complications_and_Deaths-State.csv",
-          "output_file": "output/Complications_and_Deaths-State__20260910.csv",
+          "output_file": "output/Complications_and_Deaths-State_20260910.csv",
           "rows_written": 1120
         }
       ]
@@ -118,7 +118,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/8392b7d74209bb3dc54ff1b09635e733_1785189943/ASCQR_OAS_CAHPS_BY_ASC.csv",
-          "output_file": "output/ASCQR_OAS_CAHPS_BY_ASC__20260722.csv",
+          "output_file": "output/ASCQR_OAS_CAHPS_BY_ASC_20260722.csv",
           "rows_written": 4744
         }
       ]
@@ -129,7 +129,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/ba15e25a73a051dbb3435458af7eb96d_1770163578/FY2024_Value_Based_Incentive_Payment_Amount.csv",
-          "output_file": "output/FY2024_Value_Based_Incentive_Payment_Amount__20251209.csv",
+          "output_file": "output/FY2024_Value_Based_Incentive_Payment_Amount_20251209.csv",
           "rows_written": 25
         }
       ]
@@ -140,7 +140,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/3d267e89dc34ca3a928554b9c73775ef_1770163577/FY2024_Percent_Change_in_Medicare_Payments.csv",
-          "output_file": "output/FY2024_Percent_Change_in_Medicare_Payments__20251209.csv",
+          "output_file": "output/FY2024_Percent_Change_in_Medicare_Payments_20251209.csv",
           "rows_written": 23
         }
       ]
@@ -151,7 +151,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/08eefc5ab7c6cce7b3555fd79b0d8eec_1785189951/HCAHPS-National.csv",
-          "output_file": "output/HCAHPS-National__20260722.csv",
+          "output_file": "output/HCAHPS-National_20260722.csv",
           "rows_written": 51
         }
       ]
@@ -162,7 +162,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/1b4d8a2b70cd651403cf1c4f8e545088_1770163575/FY2024_Net_Change_in_Base_Op_DRG_Payment_Amt.csv",
-          "output_file": "output/FY2024_Net_Change_in_Base_Op_DRG_Payment_Amt__20251209.csv",
+          "output_file": "output/FY2024_Net_Change_in_Base_Op_DRG_Payment_Amt_20251209.csv",
           "rows_written": 33
         }
       ]
@@ -173,7 +173,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/e4ca53701c73500a3188874f2bbd2854_1785189951/HCAHPS-State.csv",
-          "output_file": "output/HCAHPS-State__20260722.csv",
+          "output_file": "output/HCAHPS-State_20260722.csv",
           "rows_written": 2856
         }
       ]
@@ -184,7 +184,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/84bd78c1b4e386185bcef2af963d8cf9_1785189947/CMS_PSI_6_decimal_file.csv",
-          "output_file": "output/CMS_PSI_6_decimal_file__20260722.csv",
+          "output_file": "output/CMS_PSI_6_decimal_file_20260722.csv",
           "rows_written": 52338
         }
       ]
@@ -195,7 +195,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/27986ce2f1193d3fcad7fa1bddc93c3b_1785189953/Healthcare_Associated_Infections-State.csv",
-          "output_file": "output/Healthcare_Associated_Infections-State__20260722.csv",
+          "output_file": "output/Healthcare_Associated_Infections-State_20260722.csv",
           "rows_written": 1008
         }
       ]
@@ -206,7 +206,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/a87585b27c50c3899eec6a857958a5f0_1785189953/Healthcare_Associated_Infections-National.csv",
-          "output_file": "output/Healthcare_Associated_Infections-National__20260722.csv",
+          "output_file": "output/Healthcare_Associated_Infections-National_20260722.csv",
           "rows_written": 6
         }
       ]
@@ -217,7 +217,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/fdc286f2f60134775fa4b7f7b249b075_1785189954/OQR_OAS_CAHPS_NATIONAL.csv",
-          "output_file": "output/OQR_OAS_CAHPS_NATIONAL__20260722.csv",
+          "output_file": "output/OQR_OAS_CAHPS_NATIONAL_20260722.csv",
           "rows_written": 15
         }
       ]
@@ -228,7 +228,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/bc386a698d7a9b8d09bf37a73371a899_1790013958/PCH_Complications_Unplanned_Hospital_Visits_HOSPITAL.csv",
-          "output_file": "output/PCH_Complications_Unplanned_Hospital_Visits_HOSPITAL__20260910.csv",
+          "output_file": "output/PCH_Complications_Unplanned_Hospital_Visits_HOSPITAL_20260910.csv",
           "rows_written": 44
         }
       ]
@@ -239,7 +239,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/6a91b2a437ea47e61cd34c975dd54729_1790013959/PCH_Complications_Unplanned_Hospital_Visits_NATIONAL.csv",
-          "output_file": "output/PCH_Complications_Unplanned_Hospital_Visits_NATIONAL__20260910.csv",
+          "output_file": "output/PCH_Complications_Unplanned_Hospital_Visits_NATIONAL_20260910.csv",
           "rows_written": 4
         }
       ]
@@ -250,7 +250,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/893c372430d9d71a1c52737d01239d47_1785189955/Hospital_General_Information.csv",
-          "output_file": "output/Hospital_General_Information__20260722.csv",
+          "output_file": "output/Hospital_General_Information_20260722.csv",
           "rows_written": 5419
         }
       ]
@@ -261,7 +261,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/5c995348b26c08179f1149d3b07dcb70_1785189954/OQR_OAS_CAHPS_STATE.csv",
-          "output_file": "output/OQR_OAS_CAHPS_STATE__20260722.csv",
+          "output_file": "output/OQR_OAS_CAHPS_STATE_20260722.csv",
           "rows_written": 840
         }
       ]
@@ -272,7 +272,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/500f70bcb6c65433c00a96af0e0c0430_1770163607/HOSPITAL_QUARTERLY_MSPB_6_DECIMALS.csv",
-          "output_file": "output/HOSPITAL_QUARTERLY_MSPB_6_DECIMALS__20260126.csv",
+          "output_file": "output/HOSPITAL_QUARTERLY_MSPB_6_DECIMALS_20260126.csv",
           "rows_written": 2974
         }
       ]
@@ -283,7 +283,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/74be67fd6833391f578abb5605d03ce6_1770163605/FY_2026_HAC_Reduction_Program_Hospital.csv",
-          "output_file": "output/FY_2026_HAC_Reduction_Program_Hospital__20260126.csv",
+          "output_file": "output/FY_2026_HAC_Reduction_Program_Hospital_20260126.csv",
           "rows_written": 3055
         }
       ]
@@ -294,7 +294,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/6af7c44d77436e5a1caac3ce39a83fe9_1790013956/Complications_and_Deaths-Hospital.csv",
-          "output_file": "output/Complications_and_Deaths-Hospital__20260910.csv",
+          "output_file": "output/Complications_and_Deaths-Hospital_20260910.csv",
           "rows_written": 95800
         }
       ]
@@ -305,7 +305,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/d24fd9fa17ad5673de9cf6220c1c7a5a_1785189957/PCH_HEALTHCARE_ASSOCIATED_INFECTIONS_HOSPITAL.csv",
-          "output_file": "output/PCH_HEALTHCARE_ASSOCIATED_INFECTIONS_HOSPITAL__20260722.csv",
+          "output_file": "output/PCH_HEALTHCARE_ASSOCIATED_INFECTIONS_HOSPITAL_20260722.csv",
           "rows_written": 308
         }
       ]
@@ -316,7 +316,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/51dabafd670b6379256fc111bcbec8b4_1785189958/PCH_HCAHPS_NATIONAL.csv",
-          "output_file": "output/PCH_HCAHPS_NATIONAL__20260722.csv",
+          "output_file": "output/PCH_HCAHPS_NATIONAL_20260722.csv",
           "rows_written": 51
         }
       ]
@@ -327,7 +327,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/155aff6db1e04cbbe1676ce459d71053_1785189958/PCH_HCAHPS_HOSPITAL.csv",
-          "output_file": "output/PCH_HCAHPS_HOSPITAL__20260722.csv",
+          "output_file": "output/PCH_HCAHPS_HOSPITAL_20260722.csv",
           "rows_written": 748
         }
       ]
@@ -338,7 +338,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/f1d65b1e3b562b932fd3827c7783ea35_1785189959/PCH_HCAHPS_STATE.csv",
-          "output_file": "output/PCH_HCAHPS_STATE__20260722.csv",
+          "output_file": "output/PCH_HCAHPS_STATE_20260722.csv",
           "rows_written": 2856
         }
       ]
@@ -349,7 +349,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/46325dbbe6d2f654ecbb5046059c664e_1770163621/hvbp_efficiency_and_cost_reduction.csv",
-          "output_file": "output/hvbp_efficiency_and_cost_reduction__20260126.csv",
+          "output_file": "output/hvbp_efficiency_and_cost_reduction_20260126.csv",
           "rows_written": 2455
         }
       ]
@@ -360,7 +360,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/a171bc36c488d3e0dc33ec63abb469a6_1770163617/FY_2026_Hospital_Readmissions_Reduction_Program_Hospital.csv",
-          "output_file": "output/FY_2026_Hospital_Readmissions_Reduction_Program_Hospital__20260126.csv",
+          "output_file": "output/FY_2026_Hospital_Readmissions_Reduction_Program_Hospital_20260126.csv",
           "rows_written": 18330
         }
       ]
@@ -371,7 +371,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/f5c74a8e8a0f2017f6e13b6fc517ae4e_1770163619/hvbp_clinical_outcomes.csv",
-          "output_file": "output/hvbp_clinical_outcomes__20260126.csv",
+          "output_file": "output/hvbp_clinical_outcomes_20260126.csv",
           "rows_written": 2455
         }
       ]
@@ -382,7 +382,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/9189f27bb8ab7a4ff8919bdc682bf79a_1785189954/OQR_OAS_CAHPS_BY_HOSPITAL.csv",
-          "output_file": "output/OQR_OAS_CAHPS_BY_HOSPITAL__20260722.csv",
+          "output_file": "output/OQR_OAS_CAHPS_BY_HOSPITAL_20260722.csv",
           "rows_written": 92520
         }
       ]
@@ -393,7 +393,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/33e26123c259ca779642b0d61b2e82f5_1777392336/hvbp_safety.csv",
-          "output_file": "output/hvbp_safety__20260428.csv",
+          "output_file": "output/hvbp_safety_20260428.csv",
           "rows_written": 2455
         }
       ]
@@ -404,7 +404,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/ccc6534894a9bfe22b5f986260ed359e_1770163624/hvbp_person_and_community_engagement.csv",
-          "output_file": "output/hvbp_person_and_community_engagement__20260126.csv",
+          "output_file": "output/hvbp_person_and_community_engagement_20260126.csv",
           "rows_written": 2455
         }
       ]
@@ -415,7 +415,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/5551d4839c1dd75e3f7fe1310a1e2369_1770163628/hvbp_tps.csv",
-          "output_file": "output/hvbp_tps__20260126.csv",
+          "output_file": "output/hvbp_tps_20260126.csv",
           "rows_written": 2455
         }
       ]
@@ -426,7 +426,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/463e16600bec8c0aeb75ebfaef253ab7_1785189962/IPFQR_QualityMeasures_National.csv",
-          "output_file": "output/IPFQR_QualityMeasures_National__20260722.csv",
+          "output_file": "output/IPFQR_QualityMeasures_National_20260722.csv",
           "rows_written": 1
         }
       ]
@@ -437,7 +437,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/633113381312e1fa86c8e0ba8b14ed0f_1785189963/Measure_Dates.csv",
-          "output_file": "output/Measure_Dates__20260728.csv",
+          "output_file": "output/Measure_Dates_20260728.csv",
           "rows_written": 171
         }
       ]
@@ -448,7 +448,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/aaf5b6168e889e217580d86b5c443c6d_1785189963/IPFQR_QualityMeasures_State.csv",
-          "output_file": "output/IPFQR_QualityMeasures_State__20260722.csv",
+          "output_file": "output/IPFQR_QualityMeasures_State_20260722.csv",
           "rows_written": 52
         }
       ]
@@ -459,7 +459,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/ff15a8451b83ebc70b85a5c0e870a751_1785189965/Medicare_Hospital_Spending_Per_Patient-National.csv",
-          "output_file": "output/Medicare_Hospital_Spending_Per_Patient-National__20260722.csv",
+          "output_file": "output/Medicare_Hospital_Spending_Per_Patient-National_20260722.csv",
           "rows_written": 1
         }
       ]
@@ -470,7 +470,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/e56cdbea2d002358610ebdb957cb35de_1785189962/IPFQR_QualityMeasures_Facility.csv",
-          "output_file": "output/IPFQR_QualityMeasures_Facility__20260722.csv",
+          "output_file": "output/IPFQR_QualityMeasures_Facility_20260722.csv",
           "rows_written": 1410
         }
       ]
@@ -481,7 +481,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/b53c8e7d24557eb1e898557e4c7d7484_1785189965/Medicare_Hospital_Spending_Per_Patient-State.csv",
-          "output_file": "output/Medicare_Hospital_Spending_Per_Patient-State__20260722.csv",
+          "output_file": "output/Medicare_Hospital_Spending_Per_Patient-State_20260722.csv",
           "rows_written": 56
         }
       ]
@@ -492,7 +492,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/6fb7a772c39e34e630e7e97ec4887263_1785189967/Outpatient_Imaging_Efficiency-State.csv",
-          "output_file": "output/Outpatient_Imaging_Efficiency-State__20260722.csv",
+          "output_file": "output/Outpatient_Imaging_Efficiency-State_20260722.csv",
           "rows_written": 112
         }
       ]
@@ -503,7 +503,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/78172a595e76dc064ea87884c5aea1f8_1785189966/Outpatient_Imaging_Efficiency-National.csv",
-          "output_file": "output/Outpatient_Imaging_Efficiency-National__20260722.csv",
+          "output_file": "output/Outpatient_Imaging_Efficiency-National_20260722.csv",
           "rows_written": 2
         }
       ]
@@ -514,7 +514,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/d0134a9a89e59d49426cf5a2ad063b60_1785189966/Outpatient_Imaging_Efficiency-Hospital.csv",
-          "output_file": "output/Outpatient_Imaging_Efficiency-Hospital__20260722.csv",
+          "output_file": "output/Outpatient_Imaging_Efficiency-Hospital_20260722.csv",
           "rows_written": 9252
         }
       ]
@@ -525,7 +525,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/b298b4a8c05addc75d1e9c9c9b2e4706_1785189968/Timely_and_Effective_Care-National.csv",
-          "output_file": "output/Timely_and_Effective_Care-National__20260722.csv",
+          "output_file": "output/Timely_and_Effective_Care-National_20260722.csv",
           "rows_written": 45
         }
       ]
@@ -536,7 +536,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/69874ce604586980ac088283c1b35095_1785189964/Medicare_Hospital_Spending_Per_Patient-Hospital.csv",
-          "output_file": "output/Medicare_Hospital_Spending_Per_Patient-Hospital__20260722.csv",
+          "output_file": "output/Medicare_Hospital_Spending_Per_Patient-Hospital_20260722.csv",
           "rows_written": 4626
         }
       ]
@@ -547,7 +547,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/c4f74a440cc6ce4ed941fa3c9de2ab58_1785189968/Timely_and_Effective_Care-State.csv",
-          "output_file": "output/Timely_and_Effective_Care-State__20260722.csv",
+          "output_file": "output/Timely_and_Effective_Care-State_20260722.csv",
           "rows_written": 1736
         }
       ]
@@ -558,7 +558,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/d30b0557f1d06bee1d5646d2eaede709_1790013960/Unplanned_Hospital_Visits-National.csv",
-          "output_file": "output/Unplanned_Hospital_Visits-National__20260910.csv",
+          "output_file": "output/Unplanned_Hospital_Visits-National_20260910.csv",
           "rows_written": 14
         }
       ]
@@ -569,7 +569,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/73ce05bc6ecbb5def0e859818a906f7b_1790013961/Unplanned_Hospital_Visits-State.csv",
-          "output_file": "output/Unplanned_Hospital_Visits-State__20260910.csv",
+          "output_file": "output/Unplanned_Hospital_Visits-State_20260910.csv",
           "rows_written": 784
         }
       ]
@@ -580,7 +580,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/0742f326b7a19b57bc01136b2cd8b7b6_1785189970/VA_IPF.csv",
-          "output_file": "output/VA_IPF__20260722.csv",
+          "output_file": "output/VA_IPF_20260722.csv",
           "rows_written": 660
         }
       ]
@@ -591,7 +591,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/07084088a9de9e44c51bef291a4e163a_1785189971/VA_TE.csv",
-          "output_file": "output/VA_TE__20260722.csv",
+          "output_file": "output/VA_TE_20260722.csv",
           "rows_written": 1452
         }
       ]
@@ -602,7 +602,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/9cea8696850b78e02559183bd6071fd6_1785189971/Veterans_Health_Administration_Provider_Level_Data.csv",
-          "output_file": "output/Veterans_Health_Administration_Provider_Level_Data__20260722.csv",
+          "output_file": "output/Veterans_Health_Administration_Provider_Level_Data_20260722.csv",
           "rows_written": 132
         }
       ]
@@ -613,7 +613,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/f751bebc45c1ee84120ea833308faef2_1785189971/Data_Updates_July_2026.csv",
-          "output_file": "output/Data_Updates_July_2026__20260715.csv",
+          "output_file": "output/Data_Updates_July_2026_20260715.csv",
           "rows_written": 1229
         }
       ]
@@ -624,7 +624,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/2d420234bc6bcc963c6c374d91b0ed90_1785189973/PCH_Palliative_Care_HOSPITAL.csv",
-          "output_file": "output/PCH_Palliative_Care_HOSPITAL__20260722.csv",
+          "output_file": "output/PCH_Palliative_Care_HOSPITAL_20260722.csv",
           "rows_written": 44
         }
       ]
@@ -635,7 +635,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/43825e12dc0c923df9ba5cbdf473c9d5_1785189952/Healthcare_Associated_Infections-Hospital.csv",
-          "output_file": "output/Healthcare_Associated_Infections-Hospital__20260722.csv",
+          "output_file": "output/Healthcare_Associated_Infections-Hospital_20260722.csv",
           "rows_written": 172440
         }
       ]
@@ -646,7 +646,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/b19666c7d9f040b0fffd9c7135a7d92d_1785189973/PCH_Palliative_Care_NATIONAL.csv",
-          "output_file": "output/PCH_Palliative_Care_NATIONAL__20260722.csv",
+          "output_file": "output/PCH_Palliative_Care_NATIONAL_20260722.csv",
           "rows_written": 4
         }
       ]
@@ -657,7 +657,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/1f8cde9e222d5d49f88a894bcf7a8981_1770163638/Medicare_Hospital_Spending_by_Claim.csv",
-          "output_file": "output/Medicare_Hospital_Spending_by_Claim__20260126.csv",
+          "output_file": "output/Medicare_Hospital_Spending_by_Claim_20260126.csv",
           "rows_written": 63646
         }
       ]
@@ -668,7 +668,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/60ee1962356ca17e50e12f95d2871b46_1785189972/PATIENT_REPORTED_OUTCOMES_FACILITY.csv",
-          "output_file": "output/PATIENT_REPORTED_OUTCOMES_FACILITY__20260805.csv",
+          "output_file": "output/PATIENT_REPORTED_OUTCOMES_FACILITY_20260805.csv",
           "rows_written": 4626
         }
       ]
@@ -679,7 +679,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/5a4754b088fdb10d2ae278ef215925a7_1785189972/Maternal_Health-Hospital.csv",
-          "output_file": "output/Maternal_Health-Hospital__20260722.csv",
+          "output_file": "output/Maternal_Health-Hospital_20260722.csv",
           "rows_written": 17936
         }
       ]
@@ -690,7 +690,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/325633e3e81e17de313537518fdca092_1785189974/REH_Timely_and_Effective_Care-Hospital.csv",
-          "output_file": "output/REH_Timely_and_Effective_Care-Hospital__20260722.csv",
+          "output_file": "output/REH_Timely_and_Effective_Care-Hospital_20260722.csv",
           "rows_written": 172
         }
       ]
@@ -701,7 +701,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/1a7240761452e8430813299b2e5b28e1_1785189976/REH_Outpatient_Imaging_Efficiency-Hospital.csv",
-          "output_file": "output/REH_Outpatient_Imaging_Efficiency-Hospital__20260722.csv",
+          "output_file": "output/REH_Outpatient_Imaging_Efficiency-Hospital_20260722.csv",
           "rows_written": 43
         }
       ]
@@ -712,7 +712,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/400efdf48b2a73bfef6217d28bf082e3_1785189978/REH_Outpatient_Imaging_Efficiency-National.csv",
-          "output_file": "output/REH_Outpatient_Imaging_Efficiency-National__20260722.csv",
+          "output_file": "output/REH_Outpatient_Imaging_Efficiency-National_20260722.csv",
           "rows_written": 1
         }
       ]
@@ -723,7 +723,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/3e7a7fe925204d9f476690ad30ffcb28_1785189975/REH_Timely_and_Effective_Care-National.csv",
-          "output_file": "output/REH_Timely_and_Effective_Care-National__20260722.csv",
+          "output_file": "output/REH_Timely_and_Effective_Care-National_20260722.csv",
           "rows_written": 8
         }
       ]
@@ -734,7 +734,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/5462b19a756c53c1becccf13787d9157_1785189974/Promoting_Interoperability-Hospital.csv",
-          "output_file": "output/Promoting_Interoperability-Hospital__20260722.csv",
+          "output_file": "output/Promoting_Interoperability-Hospital_20260722.csv",
           "rows_written": 4626
         }
       ]
@@ -745,7 +745,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/ab50380fe5f8578c9b07e118dcdc43e4_1785189979/REH_Unplanned_Hospital_Visits-National.csv",
-          "output_file": "output/REH_Unplanned_Hospital_Visits-National__20260722.csv",
+          "output_file": "output/REH_Unplanned_Hospital_Visits-National_20260722.csv",
           "rows_written": 1
         }
       ]
@@ -756,7 +756,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/8058b83869a5ba155b84c3227e60f61c_1785189978/REH_Unplanned_Hospital_Visits-Hospital.csv",
-          "output_file": "output/REH_Unplanned_Hospital_Visits-Hospital__20260722.csv",
+          "output_file": "output/REH_Unplanned_Hospital_Visits-Hospital_20260722.csv",
           "rows_written": 43
         }
       ]
@@ -767,7 +767,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/e7f75e0803a17e22c4e26acf2183e622_1786493184/Birthing_Friendly_Hospitals_Geocoded.csv",
-          "output_file": "output/Birthing_Friendly_Hospitals_Geocoded__20260728.csv",
+          "output_file": "output/Birthing_Friendly_Hospitals_Geocoded_20260728.csv",
           "rows_written": 2263
         }
       ]
@@ -778,7 +778,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/1ee80985ad5e9a217dd0208b0e0d4b78_1785189979/PCH_Patient_Engagement_Hospital.csv",
-          "output_file": "output/PCH_Patient_Engagement_Hospital__20260722.csv",
+          "output_file": "output/PCH_Patient_Engagement_Hospital_20260722.csv",
           "rows_written": 11
         }
       ]
@@ -789,7 +789,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/887d52f819864261d84b0de6ac71a65c_1785189979/PCH_Patient_Engagement_National.csv",
-          "output_file": "output/PCH_Patient_Engagement_National__20260722.csv",
+          "output_file": "output/PCH_Patient_Engagement_National_20260722.csv",
           "rows_written": 1
         }
       ]
@@ -800,7 +800,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/30edc1d0417a34b58affcc2495a02b0a_1790013959/Unplanned_Hospital_Visits-Hospital.csv",
-          "output_file": "output/Unplanned_Hospital_Visits-Hospital__20260910.csv",
+          "output_file": "output/Unplanned_Hospital_Visits-Hospital_20260910.csv",
           "rows_written": 67060
         }
       ]
@@ -811,7 +811,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/0437b5494ac61507ad90f2af6b8085a7_1785189967/Timely_and_Effective_Care-Hospital.csv",
-          "output_file": "output/Timely_and_Effective_Care-Hospital__20260722.csv",
+          "output_file": "output/Timely_and_Effective_Care-Hospital_20260722.csv",
           "rows_written": 138084
         }
       ]
@@ -822,7 +822,7 @@
       "files": [
         {
           "download_url": "https://data.cms.gov/provider-data/sites/default/files/resources/78a50346fbe828ea0ce2837847af6a7c_1785189950/HCAHPS-Hospital.csv",
-          "output_file": "output/HCAHPS-Hospital__20260722.csv",
+          "output_file": "output/HCAHPS-Hospital_20260722.csv",
           "rows_written": 325720
         }
       ]
@@ -835,6 +835,15 @@
       "hospitals_datasets_seen": 75,
       "files_targeted": 75,
       "files_processed": 75,
+      "dry_run": false,
+      "failed": []
+    },
+    {
+      "started_utc": "2026-10-02T10:47:41.743327+00:00",
+      "completed_utc": "2026-10-02T10:47:42.141455+00:00",
+      "hospitals_datasets_seen": 75,
+      "files_targeted": 0,
+      "files_processed": 0,
       "dry_run": false,
       "failed": []
     }
