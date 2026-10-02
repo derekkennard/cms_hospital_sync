@@ -1,0 +1,10 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Local sync outputs and runtime state
+output/
+state/sync_state.json
+
+# Optional local environment file
+.env

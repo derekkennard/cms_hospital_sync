@@ -66,6 +66,21 @@ Duplicate normalized names are made unique with numeric suffixes:
 	- `1` when one or more file failures occurred
 - Console summary includes discovered datasets, targeted/processed files, run times, failures, output directory, and state file location.
 
+### Runtime progress logging
+
+The script now emits timestamped progress logs during execution so long runs are observable in real time.
+
+You will see messages for:
+- state load and run start,
+- metastore fetch start/completion,
+- discovered hospitals dataset count and queued file count,
+- per-file worker activity (`START`, `DOWNLOADED`, `DONE`),
+- aggregate progress updates as futures complete (`PROGRESS x/y`),
+- dry-run target previews,
+- state save completion.
+
+This logging is printed to standard output and is enabled by default.
+
 ## CLI options
 
 - `--output-dir` (default: `output`)
