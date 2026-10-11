@@ -8,3 +8,6 @@ output/*.csv
 
 # Optional local environment file
 .env
+
+# Github 
+.github/*

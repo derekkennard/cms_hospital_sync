@@ -26,11 +26,15 @@ from typing import Any
 
 import requests
 
-
+# Key constraints
+# CMS provider data metastore endpoint
+# script for the HTTP requests to the CMS metastore API.
 METASTORE_URL = "https://data.cms.gov/provider-data/api/1/metastore/schemas/dataset/items"
 USER_AGENT = "cms-hospitals-sync/1.0"
 
 
+# Data model: small domain object used to carry all information 
+# needed to process a single CSV download.
 @dataclass
 class DistributionTask:
     dataset_id: str
@@ -39,16 +43,18 @@ class DistributionTask:
     download_url: str
     distribution_name: str
 
-
+# Error handling: custom exception separates expected 
+# operational failures from unexpected crashes.
 class SyncError(Exception):
     """Raised for recoverable sync errors."""
 
-
+# Logging: simple timestamped info messages for tracking 
+# progress and debugging.
 def log_info(message: str) -> None:
     timestamp = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     print(f"[{timestamp}] {message}", flush=True)
 
-
+# CLI Entry point: argument parsing for the script.
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Sync CMS Hospitals datasets")
     parser.add_argument(
@@ -79,28 +85,32 @@ def parse_args() -> argparse.Namespace:
     )
     return parser.parse_args()
 
-
+# HTTP retrieval and JSON parsing
 def http_get_json(url: str) -> Any:
     try:
+        # Defensive: HTTP GET with timeout and custom User-Agent
         response = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=60)
+        # Defensive: ensure the HTTP response indicates success before proceeding
         response.raise_for_status()
         payload = response.text
     except requests.RequestException as exc:
+        # Wrap any request-related exception in a SyncError for consistent error handling.
         raise SyncError(f"Failed to GET JSON from {url}: {exc}") from exc
-
+        
     try:
         return json.loads(payload)
     except json.JSONDecodeError as exc:
+        # Defensive: turns malformed JSON into a controlled SyncError instead of crashing
         raise SyncError(f"Invalid JSON from {url}: {exc}") from exc
 
-
+# Check dataset and fail early if the metastore payload is not as expected
 def load_metastore_items(metastore_url: str) -> list[dict[str, Any]]:
     data = http_get_json(metastore_url)
     if not isinstance(data, list):
         raise SyncError("Metastore payload is not a list")
     return data
 
-
+# State management and incremental sync logic
 def load_state(state_file: Path) -> dict[str, Any]:
     default_state = {
         "last_run_started_utc": None,
@@ -121,41 +131,50 @@ def load_state(state_file: Path) -> dict[str, Any]:
     except json.JSONDecodeError as exc:
         raise SyncError(f"Invalid state JSON in {state_file}: {exc}") from exc
 
-
+# Write json with metadata about the last run, dataset status, and history.
+# Key feature: the script introduces incremental intelligence.
 def save_state(state_file: Path, state: dict[str, Any]) -> None:
     state_file.parent.mkdir(parents=True, exist_ok=True)
     state_file.write_text(json.dumps(state, indent=2, ensure_ascii=False), encoding="utf-8")
 
-
+# Dataset filtering
 def is_hospitals_dataset(item: dict[str, Any]) -> bool:
     theme = item.get("theme", [])
     if isinstance(theme, str):
         theme = [theme]
+    # Defensive: ensure theme is always a list for consistent processing
     return any(str(entry).strip().lower() == "hospitals" for entry in theme)
 
-
+# Building work tasks from dataset metadata and populate the data model
 def build_distribution_tasks(
     items: list[dict[str, Any]],
     previous_datasets_state: dict[str, Any],
 ) -> tuple[list[DistributionTask], int]:
+    # finds all hospital-related datasets
     hospitals = [item for item in items if is_hospitals_dataset(item)]
     tasks: list[DistributionTask] = []
 
     for item in hospitals:
+        # Get identifier for the dataset
         dataset_id = str(item.get("identifier", "")).strip()
         if not dataset_id:
             continue
-
+        # Get the last modified timestamp for the dataset
         dataset_modified = str(item.get("modified", "")).strip()
+        # Get the title for the dataset
         dataset_title = str(item.get("title", dataset_id)).strip()
 
+        # Compare with the previous state to determine if an update is needed
         prev = previous_datasets_state.get(dataset_id, {})
         prev_modified = str(prev.get("modified", "")).strip()
+        # If unchanged, no update is needed
         needs_update = dataset_modified != prev_modified
 
         if not needs_update:
             continue
 
+        
+        # Get the list of distributions for the dataset
         raw_distribution = item.get("distribution", [])
         distributions = raw_distribution if isinstance(raw_distribution, list) else [raw_distribution]
 
@@ -171,6 +190,7 @@ def build_distribution_tasks(
 
             parsed = urlparse(download_url)
             distribution_name = Path(parsed.path).name or "distribution"
+            # Create a distribution task for the CSV distribution
             tasks.append(
                 DistributionTask(
                     dataset_id=dataset_id,
@@ -183,8 +203,12 @@ def build_distribution_tasks(
 
     return tasks, len(hospitals)
 
-
+# Header normalization strategy
+# Converts messy column names into snake_case
 def snake_case_column(name: str) -> str:
+    # "Compatibility Decomposition” form
+    # Turn “weird Unicode text” into a more basic, 
+    # ASCII-friendly form before converting it to snake_case.
     text = unicodedata.normalize("NFKD", name)
     text = text.encode("ascii", "ignore").decode("ascii")
     text = text.replace("'", "")
@@ -194,7 +218,7 @@ def snake_case_column(name: str) -> str:
     text = text.lower()
     return text or "column"
 
-
+# Ensures that column headers are unique within a dataset
 def make_unique_headers(headers: list[str]) -> list[str]:
     counts: dict[str, int] = {}
     unique: list[str] = []
@@ -210,20 +234,23 @@ def make_unique_headers(headers: list[str]) -> list[str]:
 
     return unique
 
-
+# Sanitize output filenames. It prevents invalid characters 
+# from appearing in generated file names
 def safe_name(value: str) -> str:
     cleaned = re.sub(r"[^a-zA-Z0-9._-]+", "_", value.strip())
     cleaned = re.sub(r"_+", "_", cleaned).strip("_")
     return cleaned or "unknown"
 
-
+# Output file naming
+# Pattern <distribution_stem>__<date_tag>.csv
 def output_file_path(output_dir: Path, task: DistributionTask) -> Path:
     date_tag = task.dataset_modified.replace("-", "") if task.dataset_modified else "unknown"
     distribution_stem = safe_name(Path(task.distribution_name).stem)
     filename = f"{distribution_stem}__{date_tag}.csv"
     return output_dir / filename
 
-
+# Legacy file migration logic
+# Rewrite legacy state references to new, standardized output naming patterns.
 def migrate_legacy_output_filenames(state: dict[str, Any], output_dir: Path) -> bool:
     changed = False
     datasets = state.get("datasets", {})
@@ -262,8 +289,10 @@ def migrate_legacy_output_filenames(state: dict[str, Any], output_dir: Path) -> 
 
     return changed
 
-
+# Download and normalization worker
+# Core file-processing logic for downloading and normalizing CSV distributions.
 def download_and_normalize_csv(task: DistributionTask, output_dir: Path) -> dict[str, Any]:
+    # Log the start of the download and normalization process for this distribution.
     log_info(f"START  dataset={task.dataset_id} file={task.distribution_name}")
 
     try:
@@ -282,6 +311,7 @@ def download_and_normalize_csv(task: DistributionTask, output_dir: Path) -> dict
 
     rows_written = 0
 
+    # Writes output to a temporary file first and then moves it into place
     with NamedTemporaryFile("w", encoding="utf-8", newline="", delete=False) as temp_out:
         temp_path = Path(temp_out.name)
         text = payload.decode("utf-8-sig", errors="replace")
@@ -317,7 +347,9 @@ def download_and_normalize_csv(task: DistributionTask, output_dir: Path) -> dict
         "rows_written": rows_written,
     }
 
-
+# State update logic
+# Groups successful results by dataset and updates the state dictionary.
+# Turns a one-off downloader into a self-tracking data pipeline.
 def update_dataset_state(
     previous: dict[str, Any],
     results: list[dict[str, Any]],
@@ -346,7 +378,7 @@ def update_dataset_state(
 
     return updated
 
-
+# Main entry point for running a single synchronization pass.
 def run_sync_once(args: argparse.Namespace) -> int:
     output_dir = Path(args.output_dir)
     state_file = Path(args.state_file)
@@ -380,7 +412,8 @@ def run_sync_once(args: argparse.Namespace) -> int:
     if tasks and not args.dry_run:
         worker_count = max(1, args.workers)
         log_info(f"Starting parallel download/normalize with workers={worker_count}")
-
+        # Parallelism
+        # Processes CSV files in parallel 
         with concurrent.futures.ThreadPoolExecutor(max_workers=max(1, args.workers)) as executor:
             future_map = {
                 executor.submit(download_and_normalize_csv, task, output_dir): task
@@ -389,6 +422,7 @@ def run_sync_once(args: argparse.Namespace) -> int:
 
             completed = 0
             total = len(tasks)
+            # Allows the script to process results as soon as each worker finishes
             for future in concurrent.futures.as_completed(future_map):
                 task = future_map[future]
                 try:
@@ -462,10 +496,11 @@ def run_sync_once(args: argparse.Namespace) -> int:
     return 1 if failures else 0
 
 
+# Main entry point for the script.
 def main() -> int:
     args = parse_args()
     return run_sync_once(args)
 
-
+# Script entry point
 if __name__ == "__main__":
     raise SystemExit(main())

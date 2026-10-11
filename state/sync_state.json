@@ -1,6 +1,6 @@
 {
-  "last_run_started_utc": "2026-10-02T10:47:41.743327+00:00",
-  "last_run_completed_utc": "2026-10-02T10:47:42.141455+00:00",
+  "last_run_started_utc": "2026-10-02T10:51:19.503673+00:00",
+  "last_run_completed_utc": "2026-10-02T10:51:19.776351+00:00",
   "datasets": {
     "x663-bwbj": {
       "modified": "2026-07-22",
@@ -845,6 +845,15 @@
       "files_targeted": 0,
       "files_processed": 0,
       "dry_run": false,
+      "failed": []
+    },
+    {
+      "started_utc": "2026-10-02T10:51:19.503673+00:00",
+      "completed_utc": "2026-10-02T10:51:19.776351+00:00",
+      "hospitals_datasets_seen": 75,
+      "files_targeted": 0,
+      "files_processed": 0,
+      "dry_run": true,
       "failed": []
     }
   ]
