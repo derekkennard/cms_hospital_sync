@@ -11,3 +11,6 @@ output/*.csv
 
 # Github 
 .github/*
+
+# MacOS
+.DS_Store
